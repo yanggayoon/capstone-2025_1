@@ -1,0 +1,16 @@
+.logo-container {
+    row-gap: 16px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.logo {
+    width: 259px;
+    height: 140px;
+}
+
+.logo-title {
+    font-size: 12px;
+}
