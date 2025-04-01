@@ -8,10 +8,10 @@
     align-items: center;
     border-radius: 10px;
     justify-content: center;
-    background-color: #FCE851;
+    border: solid 2px #ECECEC;
 }
 
-.kakao {
+.google {
     width: 20px;
     height: 17px;
 }
