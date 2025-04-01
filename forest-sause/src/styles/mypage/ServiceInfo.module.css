@@ -1,0 +1,13 @@
+.title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;   
+}
+
+.list {
+    margin: 0;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: space-between;
+}
