@@ -1,0 +1,39 @@
+.title {
+    font-size: 18px;
+    font-weight: bold;   
+}
+
+.info-container {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+}
+
+.info-box {
+    row-gap: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.info-box > p {
+    margin: 0;
+}
+
+.info-box > p:first-child {
+    font-weight: bold;
+}
+
+.logout {
+    display: flex;
+    cursor: pointer;
+    column-gap: 6px;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
+    border: 1px solid #DFE2E3;
+}
+
+.logout > p {
+    font-size: 14px;
+}
