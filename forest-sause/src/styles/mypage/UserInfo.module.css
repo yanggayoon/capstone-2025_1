@@ -19,6 +19,7 @@
 
 .info-box > p {
     margin: 0;
+    font-size: 14px;
 }
 
 .info-box > p:first-child {
