@@ -7,7 +7,6 @@ function ManagePage() {
         { title: "사용자 게시물 관리", path: "/admin/posts" }
     ];
     const navigate = useNavigate();
-
     const handleClick = (path) => {
         navigate(path);
     };
