@@ -17,3 +17,7 @@
   height: 32px;
   cursor: pointer;
 }
+
+.active {
+  color: #66955A;
+}
