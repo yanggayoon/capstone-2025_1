@@ -4,6 +4,7 @@ import MyPage from './pages/MyPage';
 import AdminPage from './pages/AdminPage';
 import UserListPage from './pages/UserListPage';
 import PostManagementPage from './pages/PostManagementPage';
+import ChatPage from './pages/ChatPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/admin" element={<AdminPage />} />
         <Route path="/admin/users" element={<UserListPage />} />
         <Route path="/admin/posts" element={<PostManagementPage />} />
+        <Route path="/chat" element={<ChatPage />} />
       </Routes>
     </Router>
   );
