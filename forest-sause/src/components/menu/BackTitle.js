@@ -1,6 +1,12 @@
+import { useNavigate } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa6";
 
 function BackTitle( props ) {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate(-1);
+    };
+
     return (
         <div style={{
             color: "#5B5B5B",
@@ -11,7 +17,9 @@ function BackTitle( props ) {
                 cursor: "pointer",
                 marginLeft: "32px",
                 position: "absolute",
-            }}/>
+            }}
+            onClick={handleClick}
+            />
 
             <p style={{
                 margin: 0,
