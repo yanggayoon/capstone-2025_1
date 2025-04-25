@@ -6,6 +6,7 @@ import UserListPage from './pages/UserListPage';
 import PostManagementPage from './pages/PostManagementPage';
 import ChatPage from './pages/ChatPage';
 import CameraPage from './components/scan/CameraPage';
+import MenuPage from './pages/MenuPage';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/admin/posts" element={<PostManagementPage />} />
         <Route path="/scan-chat" element={<ChatPage />} />
         <Route path="/scan" element={<CameraPage />} />
+        <Route path="/menu" element={<MenuPage />} />
       </Routes>
     </Router>
   );
