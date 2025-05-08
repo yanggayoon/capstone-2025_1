@@ -37,4 +37,8 @@
 .message-text {
   margin: 0;
   white-space: pre-wrap;
-} 
+}
+
+.chatBox-container {
+  height: "calc(100vh - 114px - 42px - 32px)"
+}

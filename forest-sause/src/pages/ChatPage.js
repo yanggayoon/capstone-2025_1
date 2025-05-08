@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import BackTitle from '../components/menu/BackTitle';
-import CameraButton from '../components/menu/CameraButton';
+import InputBox from '../components/menu/InputBox';
 import styles from '../styles/scan/Chat.module.css';
+import { LuScanLine } from "react-icons/lu";
 
 const ChatMessage = ({ message, isUser }) => {
   return (
@@ -14,8 +15,27 @@ const ChatMessage = ({ message, isUser }) => {
 };
 
 const ChatBox = ({ messages }) => {
+  if (messages.length === 0) {
+    return (
+      <div style={{
+        flex: 1,
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100%',
+        color: '#444',
+      }}>
+        <LuScanLine style={{ fontSize: "48px", color: "#66955A", margin: "128px 0 24px 0" }} />
+        <div style={{ textAlign: 'center', fontSize: "16px" }}>
+          스캔 버튼을 눌러 재활용품을 인식하거나,<br />
+          아래 입력창에 궁금한 점을 질문해보세요!
+        </div>
+      </div>
+    );
+  }
   return (
-    <div className={styles['chatBox-container']}>
+    <div className={styles['chatBox-container']} style={{ display: 'flex', flexDirection: 'column', gap: '6px' }}>
       {messages.map((message, index) => (
         <ChatMessage key={index} message={message} isUser={message.isUser} />
       ))}
@@ -24,22 +44,21 @@ const ChatBox = ({ messages }) => {
 };
 
 function ChatPage() {
-  const [messages] = useState([
-    {
-      text: "파프리카",
-      isUser: true,
-    },
-    {
-      text: "파프리카 달걀찜\n\n재료: 파프리카(빨강, 노랑, 초록), 달걀 2개, 우유 2큰술, 소금, 후추\n\n1. 파프리카 윗부분을 잘라 속을 비운다.\n2. 달걀, 우유, 소금, 후추를 넣고 잘 풀어준다.\n3. 파프리카 속에 달걀물을 채운 후, 전자레인지에 2~3분 돌리거나 찜기에 10분간 쪄준다.",
-      isUser: false
-    },
-  ]);
+  const [messages, setMessages] = useState([]);
+
+  const handleNewMessage = (text) => {
+    const newMessage = {
+      text: text,
+      isUser: true
+    };
+    setMessages(prevMessages => [...prevMessages, newMessage]);
+  };
 
   return (
     <div className={styles['page-container']}>
-      <BackTitle title="scanner chat" />
-      <ChatBox messages={messages} />
-      <CameraButton />
+      <BackTitle title="재활용 AI 챗봇" />
+      <ChatBox messages={messages} style={{  }}/>
+      <InputBox onSendMessage={handleNewMessage} />
     </div>
   );
 }
